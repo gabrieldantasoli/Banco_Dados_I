@@ -16,3 +16,5 @@ create table tipocliente(
 
 /* alter table <tabela_origin> add constraint <nome_restrição> foreign key (<campo_tabela_origin>) references <tabela_destin0> (<campo_tabela_destino>)*/
 alter table cliente add constraint relacao foreign key (i_tipo_cliente) references tipocliente (i_tipocliente_tipocliente);
+
+select * from cliente;

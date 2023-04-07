@@ -74,6 +74,7 @@ select
     i_tipo_cliente
 from cliente_aux where i_tipo_cliente > 0;
 
+
 select * from cliente;
 select * from cliente_aux;
 select * from cliente_tipo1;
