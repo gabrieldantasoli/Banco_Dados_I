@@ -1,0 +1,1 @@
+SELECT COUNT(*) as Aguardando_Pagamento FROM ORDEM_DE_COMPRA  where STATUS = 'AGUARDANDO PAGAMENTO';
