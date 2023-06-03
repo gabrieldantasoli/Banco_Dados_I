@@ -1,0 +1,23 @@
+CLIENTE  --- OK
+TELEFONES_CLIENTE --- OK
+
+CATEGORIA --- OK
+PRODUTO  --- OK 
+
+FORNECIMENTO --- OK 
+FORNECEDOR  --- OK
+TRANSPORTADORA  --- OK
+
+ORDEM_DE_COMPRA  --- OK
+
+
+COMPRA_AVALIA_PRODUTO  --- Falta
+NOTA_FISCAL  --- Falta
+COMPRA_PRODUTO  --- Falta
+
+
+codigo_compra ---> ordem_compra
+codigo_produto ---> produto
+
+
+
