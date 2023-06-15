@@ -13,3 +13,27 @@ create table teste(
 -- 0,99 - 90; 0,99 - 95,2; 0 - 1000;
 
 insert into teste values (0,90,95,2,-100);
+
+-- ---------------------------------------------------------
+
+create table conta(
+    numero char(15),
+    nome varchar(30),
+    nome_agencia varchar(30),
+    saldo float,
+    primary key(numero),
+    constraint check_saldo_positivo check (saldo >= 0)
+);
+
+insert into conta values (0,'gabriel','051',0);
+insert into conta values (-1,'gabriel','051',0);
+insert into conta values (1,'gabriel','051',-1);
+insert into conta values(1,'josé','053',1000);
+select * from conta
+
+alter table conta add constraint check_pk check (numero > 0);
+
+
+ALTER TABLE Conta DROP CONSTRAINT check_saldo_positivo;
+
+alter table conta add constraint check_pk check (numero >= 0)
