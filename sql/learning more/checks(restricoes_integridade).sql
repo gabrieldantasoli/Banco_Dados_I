@@ -37,3 +37,15 @@ alter table conta add constraint check_pk check (numero > 0);
 ALTER TABLE Conta DROP CONSTRAINT check_saldo_positivo;
 
 alter table conta add constraint check_pk check (numero >= 0)
+
+------------------------------------------------
+
+CREATE TRIGGER verificasaldo
+AFTER UPDATE OF saldo ON conta2
+FOR EACH ROW
+WHEN (NEW.saldo > 2 * OLD.saldo)
+BEGIN
+    UPDATE conta2
+    SET status = status + 1
+    WHERE numero = :NEW.numero;
+END;
