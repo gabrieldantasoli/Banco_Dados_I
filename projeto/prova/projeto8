@@ -1,0 +1,8 @@
+create trigger upper_nome
+after insert or update of cliente_cpf on cliente
+for each row
+begin 
+    update cliente cli
+    set new.nome = upper(nome)
+    where cli.pk = new.pk;
+end;
