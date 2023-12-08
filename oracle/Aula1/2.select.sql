@@ -3,7 +3,12 @@
 	CONCAT : operador de CONCATENAÇÃO .
 	|| no oracle
 */
-
+/* BETWEEN : Faixa de valores 10 < between < 20 */
+/* IN : operador em um conjunto de valores*/
+/* LIKE : Pesquisa de valores que coinscidem com padrões utilizando caracteres coringas.
+	% => combina com zero ou mais caracters
+    _ => combina com um e somente um caractere
+*/
 
 SELECT 
 	* 
@@ -43,6 +48,48 @@ SELECT
 FROM cliente c;
 
 
+SELECT
+	c.codcli as COD_CLI,
+    c.cpf as CPF_CLI,
+    c.nome as NOME_CLI,
+    c.sobrenome as SOBRE_CLI
+FROM cliente c
+WHERE length(c.SOBRENOME) <> 6;
+
+
+SELECT 
+	*
+FROM cliente c
+where c.pontos BETWEEN 100 and 1000;
+
+
+SELECT 
+	*
+FROM cliente c
+WHERE c.end_rua in ("street 31", "street 32", "street 33");
+
+
+
+SELECT 
+	*
+FROM cliente c
+WHERE c.nome LIKE "%O%v%";
+
+
+SELECT 
+	*
+FROM cliente c
+WHERE c.nome LIKE "_v%";
+
+
+SELECT 
+	*
+FROM cliente c
+WHERE 
+	(not c.sobrenome = "Morgan") and
+    c.nome LIKE "%v%";
+
+
 /*
 TABLE CLIENTE {
 	CODCLI
@@ -62,4 +109,3 @@ TABLE CLIENTE {
 	CLIENTE_INDICA
 }
 */
-
