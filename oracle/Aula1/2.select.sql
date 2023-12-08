@@ -88,6 +88,48 @@ FROM cliente c
 WHERE 
 	(not c.sobrenome = "Morgan") and
     c.nome LIKE "%v%";
+    
+
+SELECT 
+	*
+FROM cliente c
+where c.CODCLI % 2 = 0
+ORDER BY c.nome;
+
+
+SELECT 
+	c.codcli * 2 as COD_CLI,
+    c.nome as NOME
+FROM cliente c
+ORDER BY COD_CLI DESC;
+
+
+SELECT 
+	c.codcli * 2 as COD_CLI,
+    c.nome as NOME
+FROM cliente c
+ORDER BY NOME ASC, COD_CLI DESC;
+
+
+SET @codclisearch := 2;
+SELECT *
+FROM cliente c
+WHERE c.codcli = @codclisearch;
+
+
+/* SÓ FUNCIONA NO ORACLE
+SELECT 
+	*
+FROM cliente c
+WHERE codcli = &codcli;
+
+
+DEFINE codclisearch = 10;
+SELECT 
+	*
+FROM cliente c
+WHERE codcli = &codclisearch;
+*/
 
 
 /*
