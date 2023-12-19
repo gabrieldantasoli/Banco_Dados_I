@@ -77,8 +77,3 @@ SELECT
 FROM cliente c2 
 WHERE MOD(c2.codcli, 4) = 0
 ORDER BY codcli;
-
-
-/* -------------------------------------------------------- */
-/* IN MYSQL 1 */
-/* IN ORACLE 1 */
