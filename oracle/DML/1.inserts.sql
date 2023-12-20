@@ -54,8 +54,3 @@ COMMIT;
 ROLLBACK;
 SAVEPOINT X;
 ROLLBACK TO SAVEPOINT X;
-
-
-/* -------------------------------------------------------- */
-/* IN MYSQL 1 */
-/* IN ORACLE 1 */
